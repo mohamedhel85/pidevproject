@@ -1,0 +1,95 @@
+body {
+  padding-bottom: 20px;
+  background: #333;
+  color: #666;
+}
+.container-main {
+  background: #f4f4f4;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.logo {
+  padding: 15px 0;
+}
+
+.navbar{
+  margin-bottom: 20px;
+  border-radius: 0px;
+  border: 0px;
+  color:#666;
+}
+/* carousel styles */
+#Mycarousel{
+  margin-bottom: 20px;
+}
+#Mycarousel .carousel-caption {
+  left: 0;
+  right: 0;
+  button: 0;
+  text-align: left;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  text-shadow: none;
+
+}
+
+#Mycarousel .carousel-caption h4 {
+  color:#fff;
+}
+
+#Mycarousel .carousel-caption p {
+  padding: 0;
+  margin: 0;
+}
+
+#Mycarousel .list-group {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#Mycarousel .list-group-item{
+  border-radius:0;
+  cursor: pointer;
+}
+
+#Mycarousel .list-group .active{
+  background: #eee;
+  border: 0;
+  color: #666;
+}
+
+#Mycarousel .list-group h4{
+  font-size: 17px;
+  padding:0 !important;
+  margin:0 !important;
+  padding-top:5px;
+}
+
+#Mycarousel .img-slider{
+  width:80px;
+  height:100%;
+  float: left;
+  margin-right: 5px;
+}
+
+.post-info{
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border: #ccc 1px solid ;
+}
+
+@media (min-width: 992px) {
+  #Mycarousel {padding-right:33.3333%;}
+  #Mycarousel .carousel-control{display:none;}
+}
+
+@media (max-width: 991px) {
+  .carousel-caption p , #Mycarousel .list-group{display: none;}
+}
+
+@media (max-width: 1200px) {
+  .slider-list p {display: none;}
+}

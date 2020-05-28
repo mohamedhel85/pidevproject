@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="well blog-post">
+        <!--blog post structure here -->
+        <h3><a href="#">{{PostDetail.title}}</a></h3>
+        <p class="post-info"> <i class="glyphicon glyphicon-time"></i>  Posted by {{PostDetail.author}} on {{PostDetail.createdAt|date('Y-m-d')}} at {{PostDetail.createdAt|date('H:i')}} updated at {{PostDetail.updatedAt|date('H:i')}} </p>
+        <hr>
+        <img src="img/{{PostDetail.image}}" class="img-responsive" />
+        <hr>
+        <p>
+            {{ PostDetail.carouselDesc }}
+        </p>
+
+        <p>
+            {{ PostDetail.contentdesc }}
+        </p>
+
+    </div>
+    <!--blog post ends here -->
+{% endblock  %}
+
+

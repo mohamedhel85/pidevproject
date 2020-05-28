@@ -1,0 +1,55 @@
+# app/config/config.yml
+easy_admin:
+  entities:
+    User:
+      class: AppBundle\Entity\User
+      list:
+        fields:
+          - "id"
+          - "filename"
+          - "slug"
+    Student:
+      class: AppBundle\Entity\Student
+      list:
+        fields:
+          - "id"
+          - "title"
+          - "name"
+          - "lastName"
+          - "address"
+          - "email"
+          - { property: "image" ,type: "image", base_path: "/img"}
+
+
+    Room:
+      class: AppBundle\Entity\Room
+    Reservation:
+      class: AppBundle\Entity\Reservation
+
+    NewsPost:
+      class: AppBundle\Entity\NewsPost
+      list:
+          fields:
+             - "id"
+             - "title"
+             - "carouselDesc"
+             - "contentdesc"
+             - "author"
+             - { property: "image" ,type: "image", base_path: "/img"}
+    Category:
+      class: AppBundle\Entity\Category
+    Image:
+      class: AppBundle\Entity\Image
+      list:
+        fields:
+          - "id"
+          - "filename"
+          - "slug"
+          - { property: "width" ,format: "%d" }
+          - { property: "height" ,format: "%d" }
+          - { property: "image" ,type: "image", base_path: "/img"}
+      form:
+        fields:
+          - { property: "file", type: AppBundle\Form\Type\customFileType , label: "Image file"}
+          - "slug"
+          - "category"

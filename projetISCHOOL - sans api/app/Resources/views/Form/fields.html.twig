@@ -1,0 +1,10 @@
+{% block custom_file_widget %}
+    {% spaceless %}
+        <div class="custom-file">
+            {{ form_widget(form.file) }}
+            {% if file_url is defined and file_url in not null %}
+                <img src="{{ file_url }}" alt="" class="img img-responsive thumbnail"/>
+            {% endif %}
+        </div>
+    {% endspaceless %}
+{% endblock %}
