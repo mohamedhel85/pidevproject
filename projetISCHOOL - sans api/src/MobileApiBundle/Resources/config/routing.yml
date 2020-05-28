@@ -1,0 +1,12 @@
+mobile_api_homepage:
+    path:     /
+    defaults: { _controller: MobileApiBundle:Default:index }
+allposts:
+    path: /posts/all
+    defaults: {_controller: MobileApiBundle:News:AllPost}
+find_post:
+    path: /posts/find/{id}
+    defaults: {_controller: MobileApiBundle:News:find}
+create_post:
+    path: /posts/create
+    defaults: {_controller: MobileApiBundle:News:create}

@@ -50,22 +50,29 @@ class RoomRepository extends \Doctrine\ORM\EntityRepository
 
     public function studenthavereservation($email)
     {
-//        $em= $this->getEntityManager();
-//        $qb= $em->createQueryBuilder();
-//        $nots= $em->createQuery("SELECT IDENTITY(b.id) FROM AppBundle:Student b WHERE (b.email = '$email' )");
-//        $sresult=$nots->getResult();
-//
-//        $queryav= $qb->select('r')
-//            ->from('AppBundle:Reservation' ,'r')
-//            ->where('r.student = :rstudent')
-//            ->setParameter(':rstudent',$sresult)
-//            ->getQuery();
-//        $res=$queryav->execute();
-//        if(!empty($res)){
+        $em= $this->getEntityManager();
+        $qb= $em->createQueryBuilder();
+
+        $queryst= $qb->select('s.id')
+            ->from('AppBundle:Student' ,'s')
+            ->where('s.email = :rstudent')
+            ->setParameter(':rstudent',$email)
+            ->getQuery();
+        $rest=$queryst->execute();
+
+        dump($rest);
+
+        $queryav= $qb->select('r')
+            ->from('AppBundle:Reservation' ,'r')
+            ->where('r.student = :rstudent')
+            ->setParameter('rstudent',$rest)
+            ->getQuery();
+        $res=$queryav->execute();
+        if(!empty($res)){
+            return true;
+        }
+        else
             return false;
-//        }
-//        else
-//            return false;
 
 
     }
